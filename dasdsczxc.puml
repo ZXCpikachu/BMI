@@ -1,0 +1,108 @@
+@startuml
+class com.example.demo.HelloController {
++ HBox panel
+- TextField mass
+- TextField rost
+- Label messages
+- ComboBox<String> Combo_box
+- Bmi bmi
+- String filePath
++ void initialize()
++ void ButtonClick(ActionEvent)
+- BMICalculatorStrategy createStrategy(String)
+}
+
+interface strategy.BMICalculatorStrategy {
+~ double calculateBMI(double, double)
+}
+
+class com.example.demo.Bmi {
+- double m
+- double h
+- BMICalculatorStrategy calculatorStrategy
+- ComboBox<String> Combo_box
++ double getM()
++ void setM(double)
++ double getH()
++ void setH(double)
++ void setCalculatorStrategy(BMICalculatorStrategy)
++ double calc()
++ String getStatus(String, String)
++ Color getStatusColor(String, String)
++ String toString()
+}
+
+class com.example.demo.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+- {static} void startTelegramBot()
+}
+
+interface model.Builder {
+~ void lineRectangle(double, double, Color)
+~ void arrow(double, double, double)
+~ void setMessage(String, Label)
+~ Indicator Build()
+}
+
+class strategy.BreitmanIndexStrategy {
++ double calculateBMI(double, double)
+}
+
+class strategy.NoordenIndexStrategy {
++ double calculateBMI(double, double)
+}
+
+class model.Indicator {
+- HBox panel
++ void add(Pane)
++ void remove(Pane)
++ void show(Pane)
+}
+
+class strategy.BrocaIndexStrategy {
++ double calculateBMI(double, double)
+}
+
+class model.Director {
+~ BuilderIndicator builder
++ Indicator Constr(Color, double, String, Label)
++ void hidden()
+}
+
+class strategy.StandartIndexStrategy {
++ double calculateBMI(double, double)
+}
+
+class model.BuilderIndicator {
+- Indicator indicator
+~ Pane pane
++ void lineRectangle(double, double, Color)
++ void arrow(double, double, double)
++ void setMessage(String, Label)
++ Indicator Build()
++ void remove()
+}
+
+class strategy.TatonyaIndexStrategy {
++ double calculateBMI(double, double)
+}
+
+class strategy.BernardIndexStrategy {
++ double calculateBMI(double, double)
+}
+
+class strategy.DavenportIndexStrategy {
++ double calculateBMI(double, double)
+}
+
+javafx.application.Application <|-- com.example.demo.HelloApplication
+strategy.BMICalculatorStrategy <|.. strategy.BreitmanIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.NoordenIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.BrocaIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.StandartIndexStrategy
+model.Builder <|.. model.BuilderIndicator
+strategy.BMICalculatorStrategy <|.. strategy.TatonyaIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.BernardIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.DavenportIndexStrategy
+@enduml

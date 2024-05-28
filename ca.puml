@@ -1,0 +1,29 @@
+@startuml
+class com.example.demo.HelloController {
+- Bmi bmi
++ TextField mass
++ TextField rost
++ Button buttonRes
++ Label messages
++ Indicator indicator
++ HBox panel
++ void ButtonClick(ActionEvent)
+}
+class com.example.demo.Bmi {
+- double m
+- double h
++ double getM()
++ double getH()
++ void setM(double)
++ void setH(double)
++ double calc()
++ String toString()
+}
+class com.example.demo.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+
+
+javafx.application.Application <|-- com.example.demo.HelloApplication
+@enduml

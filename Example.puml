@@ -1,0 +1,50 @@
+@startuml
+entity BrockData {
+    + indexName: String
+    + status: String
+    + lowerLimit: double
+    + upperLimit: double
+}
+
+entity BreitmanData {
+    + indexName: String
+    + status: String
+    + lowerLimit: double
+    + upperLimit: double
+}
+
+entity BerngardData {
+    + indexName: String
+    + status: String
+    + lowerLimit: double
+    + upperLimit: double
+}
+
+entity DavenportData {
+    + indexName: String
+    + status: String
+    + lowerLimit: double
+    + upperLimit: double
+}
+
+entity NoordenData {
+    + indexName: String
+    + status: String
+    + lowerLimit: double
+    + upperLimit: double
+}
+
+entity TatonyaData {
+    + indexName: String
+    + status: String
+    + lowerLimit: double
+    + upperLimit: double
+}
+
+entity StandartData {
+    + indexName: String
+    + status: String
+    + lowerLimit: double
+    + upperLimit: double
+}
+@enduml

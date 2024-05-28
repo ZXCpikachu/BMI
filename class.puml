@@ -1,0 +1,31 @@
+@startuml
+interface model.Builder {
+~ void lineRectangle(double,double,Color)
+~ void arrow(double,double,double)
+~ void setMessage(String,Label)
+~ Indicator Build()
+}
+class model.Director {
+~ BuilderIndicator builder
++ Indicator Constr(Color,double,String,Label)
++ void hidden()
+}
+class model.Indicator {
+- HBox panel
++ void add(Pane)
++ void remove(Pane)
++ void show(Pane)
+}
+class model.BuilderIndicator {
+- Indicator indicator
+~ Pane pane
++ void lineRectangle(double,double,Color)
++ void arrow(double,double,double)
++ void setMessage(String,Label)
++ Indicator Build()
++ void remove()
+}
+
+
+model.Builder <|.. model.BuilderIndicator
+@enduml

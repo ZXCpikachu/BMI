@@ -1,0 +1,46 @@
+@startuml
+class BMI {
+    + List<String[]> loadStatusData(String filePath, String strategy)
+}
+
+interface BMICalculatorStrategy {
+    + calculateBMI(double weight, double height)
+}
+
+class StandartIndexStrategy {
+    + calculateBMI(double weight, double height)
+}
+
+class BrocaIndexStrategy {
+    + calculateBMI(double weight, double height)
+}
+
+class BernardIndexStrategy {
+    + calculateBMI(double weight, double height)
+}
+
+class BreitmanIndexStrategy {
+    + calculateBMI(double weight, double height)
+}
+
+class DavenportIndexStrategy {
+    + calculateBMI(double weight, double height)
+}
+
+class NoordenIndexStrategy {
+    + calculateBMI(double weight, double height)
+}
+
+class TatonyaIndexStrategy {
+    + calculateBMI(double weight, double height)
+}
+
+BMI ..> BMICalculatorStrategy : uses
+BMI --> StandartIndexStrategy : creates
+BMI --> BrocaIndexStrategy : creates
+BMI --> BernardIndexStrategy : creates
+BMI --> BreitmanIndexStrategy : creates
+BMI --> DavenportIndexStrategy : creates
+BMI --> NoordenIndexStrategy : creates
+BMI --> TatonyaIndexStrategy : creates
+@enduml

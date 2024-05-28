@@ -1,0 +1,38 @@
+@startuml
+class com.example.HelloController {
++ HBox panel
+- TextField mass
+- TextField rost
+- Label messages
+- ComboBox<String> Combo_box
+- Bmi bmi
+- String filePath
++ void initialize()
++ void ButtonClick(ActionEvent)
+- BMICalculatorStrategy createStrategy(String)
+}
+
+class com.example.Bmi {
+- double m
+- double h
+- BMICalculatorStrategy calculatorStrategy
+- ComboBox<String> Combo_box
++ double getM()
++ void setM(double)
++ double getH()
++ void setH(double)
++ void setCalculatorStrategy(BMICalculatorStrategy)
++ double calc()
++ String getStatus(String, String)
++ Color getStatusColor(String, String)
++ String toString()
+}
+
+class com.example.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+- {static} void startTelegramBot()
+}
+
+javafx.application.Application <|-- com.example.HelloApplication
+@enduml

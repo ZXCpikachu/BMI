@@ -1,0 +1,45 @@
+@startuml
+left to right direction
+
+interface strategy.BMICalculatorStrategy {
+    ~ double calculateBMI(double,double)
+}
+
+' First column
+package "Column 1" {
+    class strategy.NoordenIndexStrategy {
+        + double calculateBMI(double,double)
+    }
+    class strategy.BrocaIndexStrategy {
+        + double calculateBMI(double,double)
+    }
+    class strategy.StandartIndexStrategy {
+        + double calculateBMI(double,double)
+    }
+    class strategy.TatonyaIndexStrategy {
+        + double calculateBMI(double,double)
+    }
+}
+
+' Second column
+package "Column 2" {
+    class strategy.BernardIndexStrategy {
+        + double calculateBMI(double,double)
+    }
+    class strategy.DavenportIndexStrategy {
+        + double calculateBMI(double,double)
+    }
+    class strategy.BreitmanIndexStrategy {
+        + double calculateBMI(double,double)
+    }
+}
+
+' Relationships
+strategy.BMICalculatorStrategy <|.. strategy.NoordenIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.BrocaIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.StandartIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.TatonyaIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.BernardIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.DavenportIndexStrategy
+strategy.BMICalculatorStrategy <|.. strategy.BreitmanIndexStrategy
+@enduml
